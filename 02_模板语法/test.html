@@ -31,12 +31,32 @@
 
 <div id="app">
   <h2>1. 双大括号表达式</h2>
-
+  <p>---{{msg}}---</p>
+  <p>---{{msg.toUpperCase()}}---</p>
   <h2>2. 指令一: 强制数据绑定</h2>
-
+  <a href="url">去百度</a>
+  <a :href="url">去百度</a>
   <h2>3. 指令二: 绑定事件监听</h2>
-
+  <button v-on:click="test">哈哈想不到吧弟弟?</button>
+  <button @click="test">哈哈我想到了傻逼</button>
 </div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data() {
+      return {
+        msg:'i am back',
+        url:'http://www.baidu.com'
+      }
+    },
+    methods: {
+      test(event){
+        alert(event.target.innerText)
+      }
+    },
+  })
+</script>
 
 </body>
 </html>
